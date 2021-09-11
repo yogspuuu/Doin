@@ -8,10 +8,10 @@ async function usingVirustotal(apiKey, domain) {
 		request = await fetchUrl(`https://www.virustotal.com/vtapi/v2/domain/report?apikey=${apiKey}&domain=${domain}`);
 	} catch(error) {
 		if (error instanceof HttpError && error.response.status == 404) {
-        	console.log(error);
-     	} else {
-       		throw error;
-      	}
+        		console.log(error);
+		} else {
+			throw error;
+		}
 	}
 	
 	return request;
